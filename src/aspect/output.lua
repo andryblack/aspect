@@ -387,6 +387,9 @@ function output.v(v, ...)
         if type(v) ~= "table" then
             return nil
         end
+        if type(k) == 'number' then
+            k = k + 1
+        end
         if v[k] == nil then
             return nil
         else

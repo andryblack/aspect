@@ -651,6 +651,12 @@ templates["in_02"] = {
     "has:"
 }
 
+templates["array_01"] = {
+    [[
+    {{list_1[0]}}
+    ]],
+    "item1"
+}
 templates["date_01"] = {
     [[
     {% if date("2019-11-11 09:56:30") > date("2019-11-11 09:55:30") %}
