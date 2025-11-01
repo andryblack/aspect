@@ -399,6 +399,19 @@ function output.v(v, ...)
     return v
 end
 
+function output.sub(v,from,to)
+    if type(v) == 'table' then
+        local res = {}
+        local start = from and (from + 1) or 1
+        local finish = to and (to + 1) or #v
+        for i=start,finish do
+            table.insert(res,v[i])
+        end
+        return res
+    end
+    return {}
+end
+
 function output:e(v)
     if v == nil then
         return

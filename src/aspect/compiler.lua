@@ -392,7 +392,20 @@ function compiler:parse_variable(tok)
                 end
                 tok:next()
             elseif mode == "[" then -- a[b]
-                insert(var, self:parse_expression(tok))
+                local start_expr = (not tok:is(":")) and self:parse_expression(tok)
+                if tok:is(":") then
+                    local end_expr
+                    tok:next()
+                    if not tok:is("]") then
+                        end_expr = self:parse_expression(tok)
+                    end
+                    local v = #var == 1 and var[1] or ("__.v(" .. concat(var, ", ") .. ")")
+                    var = {
+                         "__.sub(" .. v .. ", " .. (start_expr or "nil") .. ", " .. (end_expr or "nil") .. ")"
+                    }
+                else
+                    insert(var, start_expr)
+                end
                 tok:require("]"):next()
             end
         end

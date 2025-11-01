@@ -657,6 +657,39 @@ templates["array_01"] = {
     ]],
     "item1"
 }
+templates["array_02"] = {
+    [[
+        {% for v in list_1[1:] %}
+            {{ v }}
+        {% endfor %}
+    ]],
+    "item2 item3"
+}
+templates["array_03"] = {
+    [[
+        {% for v in list_1[1:1] %}
+            {{ v }}
+        {% endfor %}
+    ]],
+    "item2"
+}
+templates["array_04"] = {
+    [[
+        {% for v in list_1[:1] %}
+            {{ v }}
+        {% endfor %}
+    ]],
+    "item1 item2"
+}
+templates["array_05"] = {
+    [[
+        {% for v in list_1[:] %}
+            {{ v }}
+        {% endfor %}
+    ]],
+    "item1 item2 item3"
+}
+
 templates["date_01"] = {
     [[
     {% if date("2019-11-11 09:56:30") > date("2019-11-11 09:55:30") %}
