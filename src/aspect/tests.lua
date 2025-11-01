@@ -32,6 +32,10 @@ function tests.fn.is_nil(__, v)
     return v == nil
 end
 
+function tests.fn.is_string(__, v)
+    return type(v) == "string"
+end
+
 function tests.fn.is_divisible_by(__, v, number)
     return tonumber(v) % tonumber(number) == 0
 end

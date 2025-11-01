@@ -607,18 +607,27 @@ templates["is_01"] = {
     "defined"
 }
 
-templates["is_01"] = {
+templates["is_02"] = {
     [[
     {{ integer_2 ** integer_3 is even ~ " is" }}
     ]],
     "true is"
 }
 
-templates["is_01"] = {
+templates["is_03"] = {
     [[
     {{ integer_2 ** integer_3 is not even ~ " is" }}
     ]],
     "is"
+}
+
+templates["is_04"] = {
+    [[
+    {% if string_1 is string %}
+    string
+    {% endif %}
+    ]],
+    "string"
 }
 
 templates["in_01"] = {
