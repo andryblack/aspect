@@ -575,6 +575,7 @@ function compiler:parse_array(tok, plain)
     if tok:is("[") then
         tok:next()
         if tok:is("]") then
+            tok:next()
             return "{}"
         end
         while true do

@@ -689,6 +689,12 @@ templates["array_05"] = {
     ]],
     "item1 item2 item3"
 }
+templates["array_06"] = {
+    [[
+        {% set empty_array = [] %}   
+    ]],
+    ""
+}
 
 templates["date_01"] = {
     [[
