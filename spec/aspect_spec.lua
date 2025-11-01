@@ -598,6 +598,20 @@ templates["macro_04"] = {
     "[one: none] [two: value1] [: value2] [three: value3]"
 }
 
+templates["macro_05"] = {
+    [[
+    {% macro key_value(key, value = "none") %}
+        [{{ key }}: {{ value }}]
+    {% endmacro %}
+
+    {{ key_value("one") }}
+    {{ key_value("two", "value1") }}
+    {{ key_value(value = "value2") }}
+    {{ key_value(value = "value3", key = "three") }}
+    ]],
+    "[one: none] [two: value1] [: value2] [three: value3]"
+}
+
 templates["is_01"] = {
     [[
     {% if integer_1 is defined or integer_0 %}

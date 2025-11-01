@@ -232,6 +232,7 @@ function tags.tag_macro(compiler, tok)
     }
     tag.macro = macro
     compiler.macros[name] = macro
+    compiler.import[name] = import_type.SINGLE
     if tok:next():is("(") then
         local no = 1
         repeat
